@@ -82,7 +82,9 @@ git pull origin feature/index
 
 ## Pull Request:
 
-1. [1er Pull Request - Archivo principal](https://github.com/arindalC/CarrerasITAM/commit/5f2d66eea2fd7aa19d384d6c8a46810782edfedf)
-2. [2do Pull Request - Archivos necesario](https://github.com/arindalC/CarrerasITAM/commit/463d7af9948d8614d27f677fccbd426b3b1d361b)
+1. [1er Pull Request - Archivo principal](https://github.com/arindalC/CarrerasITAM/pull/1)
+2. [2do Pull Request - Archivos necesario](https://github.com/arindalC/CarrerasITAM/pull/2)
+3. [3er Pull Request - Videos Carpeta](https://github.com/arindalC/CarrerasITAM/pull/5)
+4. [4to Pull Request - Videos faltantes](https://github.com/arindalC/CarrerasITAM/pull/6)
   
 
