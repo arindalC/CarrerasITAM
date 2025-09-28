@@ -8,12 +8,20 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <style>
-            .navbar-brand img { height: 50px;}
+            .navbar-brand img { 
+                height: 50px;
+                transition: transform 0.4s ease;
+            }
+
+            .navbar-brand img:hover {
+                transform: scale(1.4);  
+            }
 
             .navbar-nav .nav-link {
                 font-size: 0.8rem;
                 gap: 1.5rem;
             }
+
 
             .navbar-nav .nav-link:not(.dropdown-toggle) {
                 position: relative;
@@ -48,8 +56,8 @@
             }
 
             .imagen{
-                background: url('banner-nuestras-carreras.png');
-                height: 93vh;
+                background: url('Archivos/banner-nuestras-carreras.png');
+                height: 85vh;
                 display: flex;
                 align-items: flex-end;
                 background-size: cover;
@@ -57,12 +65,7 @@
                 background-repeat: no-repeat;
                 background-attachment: scroll;
             }
-            @media (max-width: 768px) {
-                .imagen {
-                    height: 70vh;
-                    min-height: 500px;
-                }
-            }
+
             .carrerasTitulo{
                 font-size: 1.8rem;
                 font-weight: bold;
@@ -78,7 +81,7 @@
                 align-items: flex-end;
                 gap: .70rem;
                 display: flex;
-                flex-direction: column;  
+                flex-direction: column; 
             }
 
             .contacto a {
@@ -86,10 +89,16 @@
                 text-decoration:none;
                 display: flex;
                 align-items: center;
+                transition: transform 0.4s ease; 
             }
 
             .contacto i {     
                 text-align: center;
+                transition: transform 0.4s ease; 
+            }
+
+            .contacto i:hover,.contacto a:hover{
+                transform: scale(1.2);  
             }
 
             .redes{
@@ -106,6 +115,11 @@
                 font-weight:bold;
                 font-size: 1.3rem;
                 text-decoration:none;
+                transition: transform 0.4s ease;
+            }
+
+            .redes a:hover{
+                transform: scale(1.3);  
             }
 
             .card{
@@ -116,6 +130,16 @@
                 overflow: hidden; 
                 max-height: 50;
                 min-height: auto;
+                transition: transform 0.4s ease;
+                display:grid; 
+                gap: 16px;
+                grid-template-columns: 1fr
+            }
+
+
+
+            .card:hover {
+                transform: scale(1.1);  
             }
 
             .card-carrera .foto{
@@ -123,7 +147,11 @@
                 height: 110px;              
                 border-radius:.5rem;
                 overflow:hidden;
-                display:flex; align-items:center; justify-content:center;
+                width: 90%;
+                aspect-ratio: 16 / 9; 
+                display:flex; 
+                align-items:center; 
+                justify-content:center;
             }
 
             .card-carrera .card-body {
@@ -134,18 +162,25 @@
                 width:100%; 
                 height:100%;
                 object-fit:cover;
+                object-position: center;
+                display: block;
              }
             .plan_est{
                 font-size:0.8rem;    
                 letter-spacing:2px;
                 text-align: center;
-                display: block;       
+                display: block; 
+                color: rgb(59, 58, 58);      
                 margin: 0 auto;
             }
             .titulo_carr{
                 font-size:1rem;
                 color:#004731;
                 font-weight: 500;
+            }
+
+            .plan_est:hover,.titulo_carr:hover{
+                color:#6CB33F;
             }
 
             .videos p {
@@ -156,15 +191,12 @@
             }
 
             .play-btn i {
-                font-size: 4rem;       /* tamaño del icono de play */
-                color: white;          /* color del ícono */
+                font-size: 4rem;      
+                color: white;          
                 opacity: 0.9;
                 transition: transform 0.2s ease;
             }
 
-            .play-btn i:hover {
-                transform: scale(1.1); 
-            }
 
             footer, footer a {
                 font-size: 0.70rem; 
@@ -184,7 +216,12 @@
 
             .fredes a{
                 margin-right: 0.75rem;  
-                font-size: 0.70rem;
+                font-size: 0.5rem;
+            }
+
+            .aviso a{
+                margin-right: 0.75rem;  
+                font-size: 0.5rem;
             }
 
         </style>
@@ -194,7 +231,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-50 fixed-top">
                 <div class="container">
                     <a class="navbar-brand d-flex align-items-center">
-                        <img src="logo-ITAM-blanco.png" alt="Logo del ITAM con letras blancas" height="60">
+                        <img src="Archivos/logo-ITAM-blanco.png" alt="Logo del ITAM con letras blancas" height="60">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -266,11 +303,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card card-carrera h-100">
                             <div class="foto">
-                                <img src="actuaria.png" alt="Licenciatura en Actuaría">
+                                <img src="Archivos/actuaria.png" alt="Licenciatura en Actuaría">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr ">Actuaría</h3>
-                                <a href="plan-de-estudios-licenciatura-actuaria.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-actuaria.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -283,11 +320,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="negocios.webp" alt="Licenciatura en Administración de Negocios">
+                                <img src="Archivos/negocios.webp" alt="Licenciatura en Administración de Negocios">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Administración de Negocios</h3>
-                                <a href="plan-de-estudios-licenciatura-administracion.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-administracion.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -300,11 +337,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="datos.webp"  alt="Licenciatura en Ciencia de Datos">
+                                <img src="Archivos/datos.webp"  alt="Licenciatura en Ciencia de Datos">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Ciencia de Datos</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-de-datos.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-de-datos.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -317,11 +354,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="cpol.webp"  alt="Licenciatura en Ciencia Política">
+                                <img src="Archivos/cpol.webp"  alt="Licenciatura en Ciencia Política">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Ciencia Política</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -334,11 +371,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                             <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="Conta.webp" alt="Contaduría Analítica y Finanzas">
+                                <img src="Archivos/Conta.webp" alt="Contaduría Analítica y Finanzas">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Contaduría Analítica y Finanzas</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -351,12 +388,12 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="derecho.webp" alt="Derecho">
+                                <img src="Archivos/derecho.webp" alt="Derecho">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Derecho</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
-                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
                                 </a>
@@ -368,11 +405,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="dirfin.webp" alt="Dirección Financiera">
+                                <img src="Archivos/dirfin.webp" alt="Dirección Financiera">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Dirección Financiera</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -385,11 +422,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="dirmerca.webp"  alt="Dirección de Mercadotecnia">
+                                <img src="Archivos/dirmerca.webp"  alt="Dirección de Mercadotecnia">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Dirección de Mercadotecnia</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -402,11 +439,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="eco.webp" alt="Economía">
+                                <img src="Archivos/eco.webp" alt="Economía">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Economía</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -419,11 +456,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="mates.webp" alt="Matemáticas Aplicadas">
+                                <img src="Archivos/mates.webp" alt="Matemáticas Aplicadas">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Matemáticas Aplicadas</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -436,11 +473,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="ri.webp" alt="Relaciones Internacionales">
+                                <img src="Archivos/ri.webp" alt="Relaciones Internacionales">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Relaciones Internacionales</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -453,11 +490,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="ia.webp" alt="Ingeniería en Inteligencia Artificial">
+                                <img src="Archivos/ia.webp" alt="Ingeniería en Inteligencia Artificial">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Ingeniería en Inteligencia Artificial</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -470,11 +507,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="compu.webp" alt="Ingeniería en Ciencias de la Computación">
+                                <img src="Archivos/compu.webp" alt="Ingeniería en Ciencias de la Computación">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Ingeniería en Ciencias de la Computación</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -487,11 +524,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="industrial.webp" alt="Ingeniería en Industrial y en Sistemas Inteligentes">
+                                <img src="Archivos/industrial.webp" alt="Ingeniería en Industrial y en Sistemas Inteligentes">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Ingeniería en Industrial y en Sistemas Inteligentes</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -504,11 +541,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="robotica.webp" alt="Ingeniería en Mecatrónica y Robótica Inteligente">
+                                <img src="Archivos/robotica.webp" alt="Ingeniería en Mecatrónica y Robótica Inteligente">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Ingeniería en Mecatrónica y Robótica Inteligente</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -521,11 +558,11 @@
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card h-100 card-carrera">
                             <div class="foto">
-                                <img src="ingnegocios.webp" alt="Ingeniería en Negocios">
+                                <img src="Archivos/ingnegocios.webp" alt="Ingeniería en Negocios">
                             </div>
                             <div class="card-body text-center">
                                 <h3 class="titulo_carr">Ingeniería en Negocios</h3>
-                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                <a href="Archivos/plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
                                 class="d-flex align-items-center text-decoration-none text-dark mt-3">
                                 <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
                                 <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
@@ -553,7 +590,7 @@
                     <div class="row">
                         <div class="col-md-10 mx-auto">
                             <div class="video1 position-relative video-wrapper rounded-4 overflow-hidden">
-                                <img src="dobles-grados.webp" alt="Portada del video" class="w-100">
+                                <img src="Archivos/dobles-grados.webp" alt="Portada del video" class="w-100">
                                 <div class="play-btn position-absolute top-50 start-50 translate-middle">
                                     <i class="bi bi-play-circle-fill fs-1 text-white"></i>
                                 </div>
@@ -578,7 +615,7 @@
                     <div class="row">
                         <div class="col-md-10 mx-auto">
                             <div class="video2 position-relative video-wrapper rounded-4 overflow-hidden">
-                                <img src="programas-conjuntos.webp" alt="Portada del video" class="w-100">
+                                <img src="Archivos/programas-conjuntos.webp" alt="Portada del video" class="w-100">
                                 <div class="play-btn position-absolute top-50 start-50 translate-middle">
                                     <i class="bi bi-play-circle-fill fs-1 text-white"></i>
                                 </div>
@@ -593,21 +630,21 @@
                 <div class="row">
                 
                 <div class="col-md-4 mb-4">
-                    <img src="logo-ITAM-blanco.png" alt="Logo ITAM con letras blancas" width="120" class="mb-3">
+                    <img src="Archivos/logo-ITAM-blanco.png" alt="Logo ITAM con letras blancas" width="120" class="mb-3">
                     <p>
                     En el ITAM nos proponemos contribuir a la formación integral de la persona y al desarrollo
                     de una sociedad más libre, más justa y más próspera.
                     </p>
                     
-                    <div class="fredes d-flex gap-3 mt-3">
-                    <a href="https://www.facebook.com/AspirantesITAM/" target="_blank" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
-                    <a href="https://x.com/AspirantesITAM" target="_blank" class="text-white fs-4"><i class="bi bi-twitter-x"></i></a>
-                    <a href="https://www.youtube.com/user/itam" target="_blank" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
-                    <a href="https://api.whatsapp.com/send/?phone=5215554143597" target="_blank" class="text-white fs-4"><i class="bi bi-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/aspirantes_itam/" target="_blank" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@itam_mx" target="_blank" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
+                    <div class="fredes d-flex gap-3">
+                        <a href="https://www.facebook.com/AspirantesITAM/" target="_blank" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com/AspirantesITAM" target="_blank" class="text-white fs-4"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.youtube.com/user/itam" target="_blank" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=5215554143597" target="_blank" class="text-white fs-4"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/aspirantes_itam/" target="_blank" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@itam_mx" target="_blank" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
                     </div>
-                    <a href="https://avisodeprivacidad.itam.mx/asistencia_preuniversitaria/" class="text-white fw-bold fs-6">
+                    <a href="https://avisodeprivacidad.itam.mx/asistencia_preuniversitaria/" class="aviso text-white fw-bold">
                         Aviso de privacidad
                     </a>
                 </div>
