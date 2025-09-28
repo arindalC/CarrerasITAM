@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Carreras ITAM - Licenciatura e Ingeniería</title>
+        <link rel="icon" type="image/svg+xml" href="https://carreras.itam.mx/wp-content/uploads/2024/08/itam-favicon.svg">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <style>
+            .navbar-brand img { height: 50px;}
+
+            .navbar-nav .nav-link {
+                font-size: 0.8rem;
+                gap: 1.5rem;
+            }
+
+            .navbar-nav .nav-link:not(.dropdown-toggle) {
+                position: relative;
+            }
+
+            .navbar-nav .nav-link:not(.dropdown-toggle)::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;         
+                width: 0;
+                height: 2px;
+                background: white;   
+            }
+
+            .navbar-nav .nav-link:not(.dropdown-toggle):hover::after,
+            .navbar-nav .nav-link.active:not(.dropdown-toggle)::after {
+                width: 100%;
+            }
+
+            .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+                background-color:  #e0f2eb;
+                border-radius: 0;  
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            }
+
+            .dropdown-menu-edit .dropdown-item {
+                color: #004d40;            
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+            }
+
+            .imagen{
+                background: url('banner-nuestras-carreras.png');
+                height: 93vh;
+                display: flex;
+                align-items: flex-end;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+            }
+            @media (max-width: 768px) {
+                .imagen {
+                    height: 70vh;
+                    min-height: 500px;
+                }
+            }
+            .carrerasTitulo{
+                font-size: 1.8rem;
+                font-weight: bold;
+                position: absolute;
+                left: 2rem;
+                bottom: 7rem;  
+            }
+            .contacto{
+                position: absolute;
+                right: 2rem;
+                bottom: 7rem;
+                font-size: 1rem;
+                align-items: flex-end;
+                gap: .70rem;
+                display: flex;
+                flex-direction: column;  
+            }
+
+            .contacto a {
+                color:white;
+                text-decoration:none;
+                display: flex;
+                align-items: center;
+            }
+
+            .contacto i {     
+                text-align: center;
+            }
+
+            .redes{
+                position: absolute;
+                right:2rem;
+                bottom:3rem;
+                display:flex;
+                gap: 2rem;
+
+            }
+
+            .redes a{
+                color:white;
+                font-weight:bold;
+                font-size: 1.3rem;
+                text-decoration:none;
+            }
+
+            .card{
+                background-color:#eef1f0;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                border: 0;
+                border-radius:1rem;                    
+                overflow: hidden; 
+                max-height: 50;
+                min-height: auto;
+            }
+
+            .card-carrera .foto{
+                margin: 0.75rem 0.75rem 0.75rem;
+                height: 110px;              
+                border-radius:.5rem;
+                overflow:hidden;
+                display:flex; align-items:center; justify-content:center;
+            }
+
+            .card-carrera .card-body {
+                padding: 0.5rem 0.75rem; 
+            }
+
+            .card-carrera .foto img{
+                width:100%; 
+                height:100%;
+                object-fit:cover;
+             }
+            .plan_est{
+                font-size:0.8rem;    
+                letter-spacing:2px;
+                text-align: center;
+                display: block;       
+                margin: 0 auto;
+            }
+            .titulo_carr{
+                font-size:1rem;
+                color:#004731;
+                font-weight: 500;
+            }
+
+            .videos p {
+                text-align: justify;
+            }
+            .video-wrapper {
+                cursor: pointer;
+            }
+
+            .play-btn i {
+                font-size: 4rem;       /* tamaño del icono de play */
+                color: white;          /* color del ícono */
+                opacity: 0.9;
+                transition: transform 0.2s ease;
+            }
+
+            .play-btn i:hover {
+                transform: scale(1.1); 
+            }
+
+            footer, footer a {
+                font-size: 0.70rem; 
+            }
+
+            footer p,
+            footer a,
+            footer li {
+            margin-bottom: 0.3rem;   
+            display: block;       
+            }
+
+            footer h6 {
+            margin-bottom: 1rem;  
+            }
+
+
+            .fredes a{
+                margin-right: 0.75rem;  
+                font-size: 0.70rem;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-50 fixed-top">
+                <div class="container">
+                    <a class="navbar-brand d-flex align-items-center">
+                        <img src="logo-ITAM-blanco.png" alt="Logo del ITAM con letras blancas" height="60">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto gap-2">
+                            <li class="nav-item">
+                                <a class="nav-link  text-nowrap text-white" aria-current="page" href="https://carreras.itam.mx/">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active text-nowrap  text-white" href="Desarrollo_pagina_Web.html">Nuestras carreras</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-nowrap  dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admisiones</a>
+                                <ul class="dropdown-menu dropdown-menu-edit">
+                                    <li><a class="dropdown-item" href="https://carreras.itam.mx/admisiones/">Admisiones</a></li>
+                                    <li><a class="dropdown-item" href="https://carreras.itam.mx/becas-y-ayuda-financiera/">Becas y ayuda financiera</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-nowrap text-white"  href="https://carreras.itam.mx/vida-universitaria/">Vida universitaria</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-nowrap text-white"  href="https://carreras.itam.mx/intercambio-academico/">Intercambio académico</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-nowrap text-white"  href="https://carreras.itam.mx/estudiantes-foraneos/">Estudiantes foráneos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <section class="imagen position-relative d-glex">
+                <div class="container text-white">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <p class="carrerasTitulo">Carreras ITAM</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contacto">
+                                <a href="tel:+525556284028" class="d-block mb-2">
+                                    <i class="bi bi-telephone me-2"></i>
+                                    <span>55 5628 4028</span>
+                                </a>
+                                <a href="mailto:informes@itam.mx" class="d-block">
+                                    <i class="bi bi-envelope me-2"></i>
+                                    <span>informes@itam.mx</span>
+                                </a>
+                            </div>
+                            <div class="redes">
+                                <a href="https://www.facebook.com/AspirantesITAM/"><i class="bi bi-facebook"></i></a>
+                                <a href="https://x.com/AspirantesITAM"><i class="bi bi-twitter-x"></i></a>
+                                <a href="https://www.youtube.com/user/itam"><i class="bi bi-youtube"></i></a>
+                                <a href="https://api.whatsapp.com/send/?phone=5215554143597&text&type=phone_number&app_absent=0"><i class="bi bi-whatsapp"></i></a>
+                                <a href="https://www.instagram.com/aspirantes_itam/"><i class="bi bi-instagram"></i></a>
+                                <a href="https://www.tiktok.com/@itam_mx?_t=8pdkjJnRMlp&_r=1"><i class="bi bi-tiktok"></i></a>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <main>
+            <section class="py-5" style="background: #dcebe6;">
+                <div class="container">
+                    <div class="row g-4">
+                    
+                    <!-- Actuaría -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card card-carrera h-100">
+                            <div class="foto">
+                                <img src="actuaria.png" alt="Licenciatura en Actuaría">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr ">Actuaría</h3>
+                                <a href="plan-de-estudios-licenciatura-actuaria.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Administración de Negocios -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="negocios.webp" alt="Licenciatura en Administración de Negocios">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Administración de Negocios</h3>
+                                <a href="plan-de-estudios-licenciatura-administracion.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ciencia de Datos -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="datos.webp"  alt="Licenciatura en Ciencia de Datos">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Ciencia de Datos</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-de-datos.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ciencia Política -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="cpol.webp"  alt="Licenciatura en Ciencia Política">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Ciencia Política</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contaduría Analítica y Finanzas -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                            <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="Conta.webp" alt="Contaduría Analítica y Finanzas">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Contaduría Analítica y Finanzas</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Derecho -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="derecho.webp" alt="Derecho">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Derecho</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dirección Financiera -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="dirfin.webp" alt="Dirección Financiera">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Dirección Financiera</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dirección de Mercadotecnia -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="dirmerca.webp"  alt="Dirección de Mercadotecnia">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Dirección de Mercadotecnia</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Economía -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="eco.webp" alt="Economía">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Economía</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Matemáticas Aplicadas -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="mates.webp" alt="Matemáticas Aplicadas">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Matemáticas Aplicadas</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Relaciones Internacionales -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="ri.webp" alt="Relaciones Internacionales">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Relaciones Internacionales</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ingeniería en Inteligencia Artificial -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="ia.webp" alt="Ingeniería en Inteligencia Artificial">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Ingeniería en Inteligencia Artificial</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ingeniería en Ciencias de la Computación -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="compu.webp" alt="Ingeniería en Ciencias de la Computación">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Ingeniería en Ciencias de la Computación</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ingeniería en Industrial y en Sistemas Inteligentes -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="industrial.webp" alt="Ingeniería en Industrial y en Sistemas Inteligentes">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Ingeniería en Industrial y en Sistemas Inteligentes</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ingeniería en Mecatrónica y Robótica Inteligente -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="robotica.webp" alt="Ingeniería en Mecatrónica y Robótica Inteligente">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Ingeniería en Mecatrónica y Robótica Inteligente</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ingeniería en Negocios -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                        <div class="card h-100 card-carrera">
+                            <div class="foto">
+                                <img src="ingnegocios.webp" alt="Ingeniería en Negocios">
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="titulo_carr">Ingeniería en Negocios</h3>
+                                <a href="plan-de-estudios-licenciatura-ciencia-politica.pdf" target="_blank" 
+                                class="d-flex align-items-center text-decoration-none text-dark mt-3">
+                                <i class="bi bi-file-earmark-pdf fs-5 me-2"></i>
+                                <span class="fw-normal plan_est">PLAN DE ESTUDIOS</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="videos">
+                <div class="container my-5 text-center">
+                    <!-- Programas conjuntos -->
+                    <div class="row mb-4">
+                    <div class="col-md-4">
+                        <h2 class="fw-bold" style="color:#6CB33F;">Programas conjuntos</h2>
+                    </div>
+                    <div class="col-md-7">
+                        <p>
+                        En el <strong>ITAM</strong>, nuestros <strong>programas conjuntos</strong> te permiten estudiar dos carreras simultáneamente,
+                        con ello, optimizas tu tiempo y amplías tus habilidades. Esta opción está diseñada para ofrecerte una formación integral 
+                        en dos disciplinas distintas, lo que te permite adquirir una amplia gama de conocimientos y prepararte para diversas oportunidades profesionales.
+                        </p>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 mx-auto">
+                            <div class="video1 position-relative video-wrapper rounded-4 overflow-hidden">
+                                <img src="dobles-grados.webp" alt="Portada del video" class="w-100">
+                                <div class="play-btn position-absolute top-50 start-50 translate-middle">
+                                    <i class="bi bi-play-circle-fill fs-1 text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container my-5">
+                    <!-- Dobles grados -->
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <h2 class="fw-bold" style="color:#6CB33F;">Dobles grados</h2>
+                        </div>
+                        <div class="col-md-7">
+                            <p>
+                            En el <strong>ITAM</strong>, nuestros programas de <strong>dobles grados</strong> te permiten combinar tu licenciatura con un posgrado en un esquema dinámico y de nivel internacional. 
+                            Este modelo está diseñado para ofrecerte una formación académica avanzada en menos tiempo, preparándote para destacar en el ámbito profesional y académico.     
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 mx-auto">
+                            <div class="video2 position-relative video-wrapper rounded-4 overflow-hidden">
+                                <img src="programas-conjuntos.webp" alt="Portada del video" class="w-100">
+                                <div class="play-btn position-absolute top-50 start-50 translate-middle">
+                                    <i class="bi bi-play-circle-fill fs-1 text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="text-white pt-5 pb-3" style="background:#004d40;">
+            <div class="container">
+                <div class="row">
+                
+                <div class="col-md-4 mb-4">
+                    <img src="logo-ITAM-blanco.png" alt="Logo ITAM con letras blancas" width="120" class="mb-3">
+                    <p>
+                    En el ITAM nos proponemos contribuir a la formación integral de la persona y al desarrollo
+                    de una sociedad más libre, más justa y más próspera.
+                    </p>
+                    
+                    <div class="fredes d-flex gap-3 mt-3">
+                    <a href="https://www.facebook.com/AspirantesITAM/" target="_blank" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                    <a href="https://x.com/AspirantesITAM" target="_blank" class="text-white fs-4"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.youtube.com/user/itam" target="_blank" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5215554143597" target="_blank" class="text-white fs-4"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/aspirantes_itam/" target="_blank" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@itam_mx" target="_blank" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                    <a href="https://avisodeprivacidad.itam.mx/asistencia_preuniversitaria/" class="text-white fw-bold fs-6">
+                        Aviso de privacidad
+                    </a>
+                </div>
+
+                
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold border-bottom pb-2">MENÚ</h6>
+                    <ul class="list-unstyled">
+                    <li><a href="https://carreras.itam.mx/" class="text-white text-decoration-none">Inicio</a></li>
+                    <li><a href="Desarrollo_pagina_Web.html" class="text-white text-decoration-none">Nuestras carreras</a></li>
+                    <li><a href="https://carreras.itam.mx/admisiones/" class="text-white text-decoration-none">Admisión</a></li>
+                    <li><a href="https://carreras.itam.mx/becas/" class="text-white text-decoration-none">Becas y ayuda financiera</a></li>
+                    <li><a href="https://carreras.itam.mx/vida-universitaria/" class="text-white text-decoration-none">Vida universitaria</a></li>
+                    <li><a href="https://carreras.itam.mx/intercambio-academico/" class="text-white text-decoration-none">Intercambio académico</a></li>
+                    <li><a href="https://carreras.itam.mx/estudiantes-foraneos/" class="text-white text-decoration-none">Estudiantes foráneos</a></li>
+                    </ul>
+                </div>
+
+           
+                <div class="col-md-3 mb-4">
+                    <h6 class="fw-bold border-bottom pb-2">DIRECCIÓN</h6>
+                    <p class="mb-0">
+                        Río Hondo No. 1 <br>
+                        Col. Progreso Tizapán, CP 01080 <br>
+                        Alc. Álvaro Obregón, Ciudad de México
+                    </p>
+                </div>
+
+        
+                <div class="col-md-2 mb-4">
+                    <h6 class="fw-bold border-bottom pb-2">CONTACTO</h6>
+                    <p class="mb-1">informes@itam.mx</p>
+                    <p>55 5628 4028</p>
+                </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.querySelector('.video1').addEventListener('click', function() {
+                this.innerHTML = `
+                <iframe class="w-100 rounded-4" height="400"
+                    src="https://www.youtube.com/embed/4vxHE4T63RQ?start=4&autoplay=1" 
+                    title=""¿Estudiar dos carreras? Conoce los beneficios de estudiar un plan conjunto en el ITAM""
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                </iframe>
+                `;
+            });
+
+            document.querySelector('.video2').addEventListener('click', function() {
+                this.innerHTML = `
+                <iframe class="w-100 rounded-4" height="400"
+                    src="https://www.youtube.com/embed/2ja2c3cMWBk?autoplay=1"
+                    title="Video Dobles grados"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                </iframe>
+                `;
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+
+</html>
